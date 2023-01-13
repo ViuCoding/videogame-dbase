@@ -14,7 +14,7 @@ export default function Footer() {
       <div className='container'>
         <div className='footer'>
           <h2 className='footer-logo'>
-            Parmigiana<span className='tm'>&trade;</span>
+            GamerzShack<span className='tm'>&trade;</span>
           </h2>
 
           <div className='social-icons'>

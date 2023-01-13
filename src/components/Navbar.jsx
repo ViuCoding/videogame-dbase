@@ -17,7 +17,7 @@ export default function Navbar() {
         <nav className='navbar'>
           <Link to='/'>
             <h2 className='nav-logo'>
-              Parmigiana<span className='tm'>&trade;</span>
+              GamerzShack<span className='tm'>&trade;</span>
             </h2>
           </Link>
           <div className={`nav-list ${isActive ? "active" : ""}`}>
@@ -33,7 +33,7 @@ export default function Navbar() {
 
             <div className='nav-branding'>
               <h2 className='nav-branding__logo margin-bot'>
-                Parmigiana<span className='tm'>&trade;</span>
+                GamerzShack<span className='tm'>&trade;</span>
               </h2>
 
               <button className='btn'>SIGN UP</button>
