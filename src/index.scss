@@ -1,0 +1,444 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+// Colors
+
+$primary: #191435;
+$primary-dark: #0e0b1e;
+$secondary: #86d5b1;
+$white: #ebebeb;
+$accent: #a297d8;
+$accent2: #5dd2e9;
+
+:root {
+  font-family: "Poppins", Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  // color-scheme: light dark;
+  // font-synthesis: none;
+  // text-rendering: optimizeLegibility;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  // -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#App {
+  color: $white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: $secondary;
+  transition: all 0.8s ease;
+}
+
+img {
+  width: 100%;
+}
+body {
+  background: $primary;
+}
+
+// **
+// REUSABLE
+// **
+.page-heading {
+  color: $accent;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.sub-heading {
+  color: $accent;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.tm {
+  font-weight: 200;
+  color: $white;
+}
+
+.b-bottom {
+  border-bottom: 2px solid $accent;
+}
+
+.padding-bot {
+  padding-bottom: 1rem;
+}
+
+.margin-bot {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  text-align: center;
+  padding: 0.5rem 0.5rem;
+  background-color: $primary-dark;
+  font-family: inherit;
+  color: $white;
+  width: 6rem;
+  border: 2px solid $accent;
+  border-radius: 30px;
+  cursor: pointer;
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.pos-relative {
+  position: relative;
+}
+
+// **
+// NAVBAR
+// **
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.nav-logo {
+  font-size: 2rem;
+  color: $secondary;
+  border-bottom: 2px solid $white;
+}
+
+nav a:hover {
+  color: $white;
+}
+
+.hamburger {
+  display: block;
+
+  .hamburger__bar {
+    display: block;
+    margin: 5px auto;
+    background-color: $secondary;
+    width: 25px;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.hamburger__bar:hover {
+  background-color: $white;
+}
+
+.hamburger.active .hamburger__bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .hamburger__bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .hamburger__bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-list {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgb(25, 20, 53, 0.96);
+  border: 2px solid $accent;
+  gap: 0;
+  left: -100%;
+  top: 80px;
+  width: 90%;
+  transition: 0.8s;
+  z-index: 100;
+}
+
+.nav-link {
+  padding: 1rem 0;
+  text-transform: uppercase;
+}
+
+.nav-list.active {
+  left: 5%;
+}
+
+.page-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  a {
+    display: block;
+    text-align: center;
+    padding: 0.5rem 0.5rem;
+    width: 6rem;
+    border: 2px solid $accent;
+    border-radius: 30px;
+  }
+}
+
+.nav-branding {
+  padding: 1rem 0;
+  width: 60%;
+  margin: 0 auto;
+  border-top: 1px solid $accent;
+}
+
+.nav-branding__logo {
+  color: $accent;
+  font-size: 1.3rem;
+}
+
+// **
+// HERO
+// **
+
+.hero,
+.error-img__container {
+  min-height: fit-content;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 1));
+  font-weight: 200;
+  font-size: 1.5rem;
+  text-align: right;
+  font-style: italic;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+// **
+// MAIN
+// **
+
+article {
+  margin-bottom: 1rem;
+}
+
+.paragraph {
+  font-weight: 300;
+}
+
+.testimonials {
+  position: relative;
+  opacity: 0;
+  left: -100%;
+  transition: 2s;
+  z-index: 100;
+}
+
+.testimonials.visible {
+  left: 0;
+  opacity: 1;
+}
+
+// **
+// ABOUT
+// **
+
+.testimonial {
+  padding: 1rem;
+  background: $primary-dark;
+  border-radius: 5px;
+  text-align: center;
+
+  .testimonial-location {
+    font-weight: 100;
+    color: $secondary;
+  }
+
+  .testimonial-designation {
+    margin-bottom: 0.5rem;
+  }
+
+  .testimonial-img {
+    width: 90px;
+    border-radius: 50%;
+  }
+
+  .testimonial-msg {
+    font-weight: 200;
+  }
+}
+
+// **
+// FAQ PAGE
+// **
+
+.question {
+  padding: 2rem;
+  border-radius: 5px;
+  background: $primary-dark;
+}
+
+.faq__question {
+  font-weight: 600;
+  font-style: italic;
+}
+.faq__answer {
+  font-weight: 200;
+}
+
+// **
+// SUPPORT PAGE
+// **
+
+label,
+input,
+textarea {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+input[type="text"],
+textarea {
+  padding: 0.7rem 0.5rem;
+  background-color: $primary-dark;
+  color: $white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+textarea {
+  background-color: $primary-dark;
+  width: 100%;
+  max-width: 600px;
+  height: 250px;
+  resize: none;
+}
+
+// **
+// NOT FOUND PAGE
+// **
+
+// **
+// FOOTER
+// **
+
+footer {
+  margin-top: auto;
+}
+
+.footer {
+  display: flex;
+  padding: 1rem 0;
+  border-top: 2px solid $white;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+.icon:hover {
+  color: $white;
+}
+
+.icon + .icon {
+  margin-left: 1rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  color: $secondary;
+}
+
+// **
+// MEDIA QUERIES
+// **
+
+@media (min-width: 400px) {
+  .row {
+    display: flex;
+    align-items: center;
+  }
+
+  // About
+
+  .testimonial {
+    text-align: left;
+    .testimonial-msg {
+      border-left: 1px solid $secondary;
+      margin-left: 1rem;
+      padding-left: 1rem;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .container {
+    width: 70%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  // Navbar
+  .nav-list {
+    position: unset;
+    flex-direction: row;
+    background-color: transparent;
+    width: auto;
+    border: none;
+  }
+
+  .nav-link {
+    padding: 0;
+
+    &.active {
+      color: $white;
+      border-bottom: 2px solid $white;
+    }
+  }
+
+  .nav-link + .nav-link {
+    margin-left: 1rem;
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .nav-branding {
+    display: none;
+  }
+
+  // Hero
+
+  .overlay {
+    font-size: 2rem;
+  }
+
+  // Footer
+
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-logo {
+    margin: 0;
+  }
+}
