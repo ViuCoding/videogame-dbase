@@ -1,3 +1,6 @@
+// styles
+import "./Faq.scss";
+
 export default function Faq() {
   return (
     <section className='faq-page'>

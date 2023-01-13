@@ -1,3 +1,6 @@
+// styles
+import "./Support.scss";
+
 export default function Support() {
   return (
     <section className='support-page'>

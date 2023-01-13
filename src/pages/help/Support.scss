@@ -1,0 +1,37 @@
+// Colors
+
+$primary: #191435;
+$primary-dark: #0e0b1e;
+$secondary: #86d5b1;
+$white: #ebebeb;
+$accent: #a297d8;
+$accent2: #5dd2e9;
+
+// **
+// SUPPORT PAGE
+// **
+
+label,
+input,
+textarea {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+input[type="text"],
+textarea {
+  padding: 0.7rem 0.5rem;
+  background-color: $primary-dark;
+  color: $white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+textarea {
+  background-color: $primary-dark;
+  width: 100%;
+  max-width: 600px;
+  height: 250px;
+  resize: none;
+}

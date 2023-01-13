@@ -1,17 +1,10 @@
-import Hero from "../components/Hero";
-import Background1 from "../assets/img/bg1.jpg";
+// styles
+import "./Home.scss";
 
-import { useLoaderData } from "react-router-dom";
-import { useInView } from "react-intersection-observer";
-
-import Testimonials from "../components/Testimonials";
+import Hero from "../../components/Hero";
+import Background1 from "../../assets/img/bg1.jpg";
 
 export default function Home() {
-  const { ref: testimonialRef, inView: testimonialVisible } = useInView();
-  console.log(testimonialVisible);
-
-  const testimonials = useLoaderData();
-
   return (
     <>
       <section className='home-page'>
@@ -53,16 +46,6 @@ export default function Home() {
             </p>
           </article>
 
-          <div
-            className={`pos-relative ${testimonialVisible ? "visible" : ""}`}
-            ref={testimonialRef}>
-            <article
-              className={`testimonials ${testimonialVisible ? "visible" : ""}`}>
-              <h2 className='sub-heading margin-bot'>Testimonials</h2>
-              <Testimonials testimonials={testimonials} />
-            </article>
-          </div>
-
           <article>
             <p className='paragraph'>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex,
@@ -101,11 +84,3 @@ export default function Home() {
     </>
   );
 }
-
-export const testimonialsLoader = async () => {
-  const URL = "https://testimonialapi.toolcarton.com/api";
-  const res = await fetch(URL);
-  const data = await res.json();
-
-  return data;
-};

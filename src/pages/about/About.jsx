@@ -1,9 +1,9 @@
-import Hero from "../components/Hero";
-import Background2 from "../assets/img/bg2.jpg";
+import "./About.scss";
 
+import Hero from "../../components/Hero";
+import Background2 from "../../assets/img/bg2.jpg";
 
 export default function About() {
-
   return (
     <>
       <section className='about-page'>
@@ -29,8 +29,6 @@ export default function About() {
             </p>
           </article>
 
-          
-
           <article>
             <p className='paragraph'>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex,
@@ -52,4 +50,3 @@ export default function About() {
     </>
   );
 }
-

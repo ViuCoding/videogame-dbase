@@ -1,0 +1,26 @@
+// Colors
+
+$primary: #191435;
+$primary-dark: #0e0b1e;
+$secondary: #86d5b1;
+$white: #ebebeb;
+$accent: #a297d8;
+$accent2: #5dd2e9;
+
+// **
+// FAQ PAGE
+// **
+
+.question {
+  padding: 2rem;
+  border-radius: 5px;
+  background: $primary-dark;
+}
+
+.faq__question {
+  font-weight: 600;
+  font-style: italic;
+}
+.faq__answer {
+  font-weight: 200;
+}

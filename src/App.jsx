@@ -10,8 +10,8 @@ import RootLayout from "./layouts/RootLayout";
 import HelpLayout from "./layouts/HelpLayout";
 
 // Pages
-import Home, { testimonialsLoader } from "./pages/Home";
-import About from "./pages/About";
+import Home from "./pages/home/Home";
+import About from "./pages/about/About";
 import Faq from "./pages/help/Faq";
 import Support from "./pages/help/Support";
 import NotFound from "./pages/NotFound";
@@ -20,7 +20,7 @@ import NotFound from "./pages/NotFound";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout />}>
-      <Route index element={<Home />} loader={testimonialsLoader} />
+      <Route index element={<Home />} />
       <Route path='about' element={<About />} />
       <Route path='help' element={<HelpLayout />}>
         <Route path='faq' element={<Faq />} />

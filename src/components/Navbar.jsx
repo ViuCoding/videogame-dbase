@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+// styles
+import "./Navbar.scss";
+
 export default function Navbar() {
   const [isActive, setActive] = useState(false);
 

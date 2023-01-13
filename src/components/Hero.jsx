@@ -1,3 +1,5 @@
+import "./Hero.scss";
+
 export default function Hero({ src, message }) {
   return (
     <section className='hero'>
