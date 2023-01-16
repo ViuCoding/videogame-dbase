@@ -16,9 +16,7 @@ export default function Navbar() {
       <div className='container'>
         <nav className='navbar'>
           <Link to='/'>
-            <h2 className='nav-logo'>
-              GamerzShack<span className='tm'>&trade;</span>
-            </h2>
+            <h2 className='nav-logo'>GamerzShack</h2>
           </Link>
           <div className={`nav-list ${isActive ? "active" : ""}`}>
             <NavLink to='/' className='nav-link' onClick={toggleActive}>
