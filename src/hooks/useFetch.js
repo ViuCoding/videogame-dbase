@@ -9,11 +9,12 @@ export default function useFetch(URL) {
 
   // functions
   async function fetchData() {
+    console.log("running");
     try {
       setLoading(true);
       const res = await fetch(URL);
-      const parsedData = res.json();
-      setData(parsedData);
+      const parsedData = await res.json();
+      setData(parsedData.results);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -22,7 +23,12 @@ export default function useFetch(URL) {
   }
 
   useEffect(() => {
-    fetchData();
+    if (URL.slice(-1) !== "=") {
+      console.log("I AM URL", URL);
+      fetchData();
+    } else {
+      setData(null);
+    }
   }, [URL]);
 
   return { data, error, loading };

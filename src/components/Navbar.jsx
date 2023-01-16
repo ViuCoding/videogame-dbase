@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 // styles
 import "./Navbar.scss";
+import Searchbar from "./Searchbar";
 
 export default function Navbar() {
   const [isActive, setActive] = useState(false);
@@ -18,6 +19,9 @@ export default function Navbar() {
           <Link to='/'>
             <h2 className='nav-logo'>GamerzShack</h2>
           </Link>
+
+          <Searchbar />
+
           <div className={`nav-list ${isActive ? "active" : ""}`}>
             <NavLink to='/' className='nav-link' onClick={toggleActive}>
               Home
