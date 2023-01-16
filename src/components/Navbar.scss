@@ -1,10 +1,10 @@
 // Colors
 
-$primary: #1a1919;
-$primary-dark: #0e0b1e;
+$primary: #0a0a0a;
+$primary-dark: #000000;
 $secondary: #32e0c4;
 $white: #eeeeee;
-$accent: #2f89fc;
+$accent: #d2e603;
 $accent2: #5dd2e9;
 
 // **
@@ -60,7 +60,7 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: rgb(25, 20, 53, 0.96);
+  background-color: rgba(10, 10, 10,0.98);
   border: 2px solid $accent;
   gap: 0;
   left: -100%;
