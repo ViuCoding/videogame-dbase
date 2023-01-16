@@ -1,11 +1,4 @@
-// Colors
-
-$primary: #0a0a0a;
-$primary-dark: #000000;
-$secondary: #32e0c4;
-$white: #eeeeee;
-$accent: #d2e603;
-$accent2: #5dd2e9;
+@import "../variables";
 
 // **
 // NAVBAR
@@ -60,7 +53,7 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: rgba(10, 10, 10,0.98);
+  background-color: rgba(10, 10, 10, 0.98);
   border: 2px solid $accent;
   gap: 0;
   left: -100%;
