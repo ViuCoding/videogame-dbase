@@ -9,7 +9,6 @@ export default function useFetch(URL) {
 
   // functions
   async function fetchData() {
-    console.log("running");
     try {
       setLoading(true);
       const res = await fetch(URL);
@@ -24,7 +23,6 @@ export default function useFetch(URL) {
 
   useEffect(() => {
     if (URL.slice(-1) !== "=") {
-      console.log("I AM URL", URL);
       fetchData();
     } else {
       setData(null);

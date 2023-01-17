@@ -9,22 +9,20 @@ import SearchPreview from "./SearchPreview";
 
 export default function Searchbar() {
   const RAWG_KEY = "71806925a6f940ec8cf552ed24cf8b1a";
-  const [url, setUrl] = useState(
-    `https://api.rawg.io/api/games?key=${RAWG_KEY}&search=`
-  );
+  const [url, setUrl] = useState("");
   const { data, error, loading } = useFetch(url);
 
   function handleChange(e) {
-    if (e.target.value === "") {
-      setUrl(`https://api.rawg.io/api/games?key=${RAWG_KEY}&search=`);
+    if (e.target.value.trim() === "") {
+      setUrl("");
     } else {
-      setUrl(
-        `https://api.rawg.io/api/games?key=${RAWG_KEY}&search=${e.target.value}`
-      );
+      setTimeout(() => {
+        setUrl(
+          `https://api.rawg.io/api/games?key=${RAWG_KEY}&search=${e.target.value.trim()}`
+        );
+      }, 1500);
     }
   }
-
-  console.log("i am DATA", data);
 
   return (
     <div className='searchbar'>
