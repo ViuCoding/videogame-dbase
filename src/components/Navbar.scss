@@ -9,9 +9,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
+  position: relative;
 }
 
 .nav-logo {
+  display: none;
   font-size: 2rem;
   color: $secondary;
   border-bottom: 2px solid $white;
