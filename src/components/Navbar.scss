@@ -9,9 +9,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
+  position: relative;
 }
 
 .nav-logo {
+  display: none;
   font-size: 2rem;
   color: $secondary;
   border-bottom: 2px solid $white;
@@ -56,9 +58,9 @@ nav a:hover {
   background-color: rgba(10, 10, 10, 0.98);
   border: 2px solid $accent;
   gap: 0;
-  left: -100%;
+  left: -150%;
   top: 80px;
-  width: 90%;
+  width: 100%;
   transition: 0.8s;
   z-index: 100;
 }
@@ -69,7 +71,7 @@ nav a:hover {
 }
 
 .nav-list.active {
-  left: 5%;
+  left: 0;
 }
 
 .page-nav {

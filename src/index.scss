@@ -178,3 +178,10 @@ article {
     margin: 0;
   }
 }
+
+@media (min-width: 1000px) {
+  .nav-logo {
+    display: block;
+    margin-right: 1rem;
+  }
+}
