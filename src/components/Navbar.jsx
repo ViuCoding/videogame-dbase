@@ -34,9 +34,7 @@ export default function Navbar() {
             </NavLink>
 
             <div className='nav-branding'>
-              <h2 className='nav-branding__logo margin-bot'>
-                GamerzShack<span className='tm'>&trade;</span>
-              </h2>
+              <h2 className='nav-branding__logo margin-bot'>GamerzShack</h2>
 
               <button className='btn'>SIGN UP</button>
             </div>
