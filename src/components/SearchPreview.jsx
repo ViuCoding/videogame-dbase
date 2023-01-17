@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./SearchPreview.scss";
 
 export default function SearchPreview({ payload, loading, error }) {
@@ -6,14 +7,15 @@ export default function SearchPreview({ payload, loading, error }) {
       {loading && <div>Loading</div>}
       {payload.map(game => {
         return (
-          <div className='game' key={game.id}>
-            <div
-              className='icon-box'
-              style={{
-                backgroundImage: `url(${game.background_image})`,
-              }}></div>
-            <div className='game-info'>
-              {/* <p
+          <Link to={`/games/${game.id.toString()}`} key={game.id}>
+            <div className='game'>
+              <div
+                className='icon-box'
+                style={{
+                  backgroundImage: `url(${game.background_image})`,
+                }}></div>
+              <div className='game-info'>
+                {/* <p
                 className='game-metacritic'
                 style={{
                   backgroundColor:
@@ -23,9 +25,10 @@ export default function SearchPreview({ payload, loading, error }) {
                       ? "yellow"
                       : "crimson",
                 }}></p> */}
-              <h3 className='game-name'>{game.name}</h3>
+                <h3 className='game-name'>{game.name}</h3>
+              </div>
             </div>
-          </div>
+          </Link>
         );
       })}
     </div>
