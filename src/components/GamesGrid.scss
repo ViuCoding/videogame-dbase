@@ -1,0 +1,27 @@
+@import "../variables";
+
+.game-card {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: $white;
+
+  .game-card__bg {
+    min-height: 200px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .game-card__info {
+    min-height: 150px;
+    background-color: $primary-dark;
+  }
+
+  .game-metacritic {
+    width: 15px;
+    height: 15px;
+    padding: 3px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+}
