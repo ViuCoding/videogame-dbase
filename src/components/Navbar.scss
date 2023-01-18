@@ -10,6 +10,12 @@
   align-items: center;
   padding: 1rem 0;
   position: relative;
+
+  .nav-logo__alt img {
+    width: 50px;
+    filter: invert(74%) sepia(92%) saturate(378%) hue-rotate(106deg)
+      brightness(91%) contrast(92%);
+  }
 }
 
 .nav-logo {

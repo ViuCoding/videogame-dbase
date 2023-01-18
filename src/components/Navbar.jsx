@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 // styles
 import "./Navbar.scss";
 import Searchbar from "./Searchbar";
+import AltLogo from "../assets/img/arcade-game.svg";
 
 export default function Navbar() {
   const [isActive, setActive] = useState(false);
@@ -18,6 +19,9 @@ export default function Navbar() {
         <nav className='navbar'>
           <Link to='/'>
             <h2 className='nav-logo'>GamerzShack</h2>
+            <div className='nav-logo__alt'>
+              <img src={AltLogo} alt='' />
+            </div>
           </Link>
 
           <Searchbar />
