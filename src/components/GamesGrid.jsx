@@ -1,4 +1,12 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSteam,
+  faPlaystation,
+  faXbox,
+} from "@fortawesome/free-brands-svg-icons";
+
+// styles
 import "./GamesGrid.scss";
 
 export default function GamesGrid({ games }) {
@@ -6,8 +14,11 @@ export default function GamesGrid({ games }) {
     <div className='games-grid'>
       {games.map(game => {
         return (
-          <Link to={`/games/${game.id.toString()}`} key={game.id}>
-            <div className='game-card'>
+          <Link
+            to={`/games/${game.id.toString()}`}
+            key={game.id}
+            className='game-card'>
+            <div>
               <div
                 className='game-card__bg'
                 style={{
@@ -15,10 +26,10 @@ export default function GamesGrid({ games }) {
                 }}></div>
               <div className='game-card__info'>
                 <h3 className='game-title'>{game.name}</h3>
-                <p>
+                <p className='game-metacritic'>
                   Metacritic
                   <span
-                    className='game-metacritic'
+                    className='game-metacritic__vote'
                     style={{
                       backgroundColor:
                         game.metacritic > 75
@@ -30,7 +41,17 @@ export default function GamesGrid({ games }) {
                     {game.metacritic}
                   </span>
                 </p>
-                <p className='game-released'>{game.released}</p>
+                <p className='game-released'>
+                  {new Date(game.released.toString()).toDateString()}
+                </p>
+
+                {game.platforms.map((plat, index) => {
+                  return (
+                    <span className='platform' key={index}>
+                      {plat.platform.name}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           </Link>

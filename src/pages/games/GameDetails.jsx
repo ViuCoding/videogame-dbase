@@ -10,7 +10,5 @@ export default function GameDetails() {
 
   const { data, error, loading } = useFetchGame(url);
 
-  console.log(data);
-
-  return <div className='container'>{data && <h1>{data.name}</h1>}</div>;
+  return <div className='game-details'>{data && <h1>{data.name}</h1>}</div>;
 }
