@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import "./SearchPreview.scss";
 
-export default function SearchPreview({ payload, loading, error }) {
+export default function SearchPreview({ payload, loading, error, onClick }) {
   return (
     <div className='search-preview'>
       {loading && <div>Loading</div>}
       {payload.map(game => {
         return (
-          <Link to={`/games/${game.id.toString()}`} key={game.id}>
+          <Link
+            to={`/games/${game.id.toString()}`}
+            key={game.id}
+            onClick={onClick}>
             <div className='game'>
               <div
                 className='icon-box'

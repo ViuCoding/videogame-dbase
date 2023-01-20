@@ -40,7 +40,7 @@ export default function Navbar() {
             <div className='nav-branding'>
               <h2 className='nav-branding__logo margin-bot'>GamerzShack</h2>
 
-              <button className='btn'>SIGN UP</button>
+              {/* <button className='btn'>SIGN UP</button> */}
             </div>
           </div>
 
