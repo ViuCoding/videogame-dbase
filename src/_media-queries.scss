@@ -1,0 +1,127 @@
+// **
+// MEDIA QUERIES
+// **
+
+@media (min-width: 400px) {
+  .row {
+    display: flex;
+    align-items: center;
+  }
+
+  // About
+  // About
+  // About
+
+  .testimonial {
+    text-align: left;
+    .testimonial-msg {
+      border-left: 1px solid $secondary;
+      margin-left: 1rem;
+      padding-left: 1rem;
+    }
+  }
+}
+
+@media (min-width: 550px) {
+  // GamesGrid
+  // GamesGrid
+  // GamesGrid
+
+  .games-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .game-card {
+    width: 49%;
+  }
+}
+
+// 800px
+// 800px
+// 800px
+
+@media (min-width: 800px) {
+  .container {
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  // Navbar
+  // Navbar
+  // Navbar
+
+  .nav-list {
+    position: unset;
+    flex-direction: row;
+    background-color: transparent;
+    width: auto;
+    border: none;
+  }
+
+  .nav-link {
+    padding: 0;
+
+    &.active {
+      color: $white;
+      border-bottom: 2px solid $white;
+    }
+  }
+
+  .nav-link + .nav-link {
+    margin-left: 1rem;
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .nav-branding {
+    display: none;
+  }
+
+  // Hero
+  // Hero
+  // Hero
+
+  .overlay {
+    font-size: 2rem;
+  }
+
+  // GamesGrid
+  // GamesGrid
+  // GamesGrid
+
+  .game-card {
+    width: 32%;
+  }
+
+  // Footer
+  // Footer
+  // Footer
+
+  .rawg-logo {
+    text-align: center;
+    width: 20%;
+    margin: 0 auto;
+  }
+}
+
+// 1000px
+// 1000px
+// 1000px
+
+@media (min-width: 1000px) {
+  .nav-logo {
+    display: block;
+    margin-right: 1rem;
+  }
+
+  .nav-logo__alt {
+    display: none;
+  }
+}

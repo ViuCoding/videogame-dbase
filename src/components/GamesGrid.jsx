@@ -8,17 +8,15 @@ import {
 
 // styles
 import "./GamesGrid.scss";
+import Metacritic from "../assets/img/Metacritic.svg";
 
 export default function GamesGrid({ games }) {
   return (
     <div className='games-grid'>
       {games.map(game => {
         return (
-          <Link
-            to={`/games/${game.id.toString()}`}
-            key={game.id}
-            className='game-card'>
-            <div>
+          <div key={game.id} className='game-card'>
+            <Link to={`/games/${game.id.toString()}`}>
               <div
                 className='game-card__bg'
                 style={{
@@ -26,8 +24,8 @@ export default function GamesGrid({ games }) {
                 }}></div>
               <div className='game-card__info'>
                 <h3 className='game-title'>{game.name}</h3>
-                <p className='game-metacritic'>
-                  Metacritic
+                <div className='game-metacritic'>
+                  <img src={Metacritic} alt='Metacritic logo' />
                   <span
                     className='game-metacritic__vote'
                     style={{
@@ -40,21 +38,13 @@ export default function GamesGrid({ games }) {
                     }}>
                     {game.metacritic}
                   </span>
-                </p>
+                </div>
                 <p className='game-released'>
                   {new Date(game.released.toString()).toDateString()}
                 </p>
-
-                {game.platforms.map((plat, index) => {
-                  return (
-                    <span className='platform' key={index}>
-                      {plat.platform.name}
-                    </span>
-                  );
-                })}
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         );
       })}
     </div>

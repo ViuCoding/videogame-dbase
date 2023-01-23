@@ -6,27 +6,32 @@
   margin-bottom: 1rem;
   color: $white;
 
+  a {
+    color: $white;
+  }
+
   .game-card__bg {
-    min-height: 150px;
+    min-height: 250px;
     background-position: center;
     background-size: cover;
     border-radius: 10px 10px 0 0;
   }
 
   .game-card__info {
-    min-height: 300px;
+    min-height: 250px;
     background-color: $primary-dark;
     border-radius: 0 0 10px 10px;
-    padding: 0 0.5rem;
-
-    .game-title {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid $secondary;
-    }
+    padding: 2rem 0;
 
     .game-metacritic {
-      font-weight: 200;
-      padding: 0.5rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.5rem 0;
+
+      img {
+        width: 24px;
+      }
     }
 
     .game-metacritic__vote {
@@ -39,6 +44,7 @@
 
     .game-released {
       font-weight: 200;
+      font-style: italic;
     }
 
     .platform {
