@@ -30,6 +30,9 @@ export default function Navbar() {
             <NavLink to='/' className='nav-link' onClick={toggleActive}>
               Home
             </NavLink>
+            <NavLink to='games' className='nav-link' onClick={toggleActive}>
+              Games
+            </NavLink>
             <NavLink to='about' className='nav-link' onClick={toggleActive}>
               About
             </NavLink>
