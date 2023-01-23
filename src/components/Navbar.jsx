@@ -33,12 +33,12 @@ export default function Navbar() {
             <NavLink to='games' className='nav-link' onClick={toggleActive}>
               Games
             </NavLink>
-            <NavLink to='about' className='nav-link' onClick={toggleActive}>
+            {/* <NavLink to='about' className='nav-link' onClick={toggleActive}>
               About
             </NavLink>
             <NavLink to='help' className='nav-link' onClick={toggleActive}>
               Help
-            </NavLink>
+            </NavLink> */}
 
             <div className='nav-branding'>
               <h2 className='nav-branding__logo margin-bot'>GamerzShack</h2>
