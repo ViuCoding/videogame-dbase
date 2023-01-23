@@ -5,6 +5,7 @@ import Hero from "../../components/Hero";
 import Background1 from "../../assets/img/bg1.jpg";
 import useFetch from "../../hooks/useFetch";
 import GamesGrid from "../../components/GamesGrid";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 export default function Home() {
   const { data, error, loading } = useFetch(
@@ -15,7 +16,6 @@ export default function Home() {
     <>
       <section className='home-page'>
         <div className='container'>
-
           <Hero src={Background1} message='Join the Empire' />
 
           <article>
@@ -28,7 +28,7 @@ export default function Home() {
 
           <article>
             <h2 className='sub-heading'>TRENDING GAMES</h2>
-            {loading && <div>Loading...</div>}
+            {loading && <LoadingSpinner />}
             {data && <GamesGrid games={data} />}
             {error && <div>Error..</div>}
             {}

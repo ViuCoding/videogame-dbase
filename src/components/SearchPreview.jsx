@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import LoadingSpinner from "./LoadingSpinner";
 import "./SearchPreview.scss";
 
 export default function SearchPreview({ payload, loading, error, onClick }) {
   return (
     <div className='search-preview'>
-      {loading && <div>Loading</div>}
+      {loading && <LoadingSpinner />}
       {payload.map(game => {
         return (
           <Link

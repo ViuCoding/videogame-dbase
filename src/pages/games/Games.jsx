@@ -8,6 +8,7 @@ import "./Games.scss";
 
 // Components
 import GamesGrid from "../../components/GamesGrid";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 export default function Games() {
   // state
@@ -48,7 +49,7 @@ export default function Games() {
   return (
     <section className='games-page'>
       <h1 className='page-heading '>EXPLORE GAMES</h1>
-      {loading && <div>Loading...</div>}
+      {loading && <LoadingSpinner />}
       {data && <GamesGrid games={data} />}
       {error && <div>Error..</div>}
       <div className='next-page'>
