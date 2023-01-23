@@ -13,7 +13,7 @@ export default function useFetchGame(URL) {
       setLoading(true);
       const res = await fetch(URL);
       const parsedData = await res.json();
-      setData(parsedData);
+      setData(prevData => (prevData = parsedData));
     } catch (err) {
       setError(err.message);
     } finally {

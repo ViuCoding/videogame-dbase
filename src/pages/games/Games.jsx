@@ -8,9 +8,7 @@ import GamesGrid from "../../components/GamesGrid";
 export default function Games() {
   // state
   const [page, setPage] = useState(1);
-  const [url, setUrl] = useState(
-    `https://api.rawg.io/api/games?key=71806925a6f940ec8cf552ed24cf8b1a&page=${page}&page_size=21`
-  );
+
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -19,13 +17,18 @@ export default function Games() {
   async function fetchData() {
     try {
       setLoading(true);
-      const res = await fetch(url);
+      const res = await fetch(
+        `https://api.rawg.io/api/games?key=71806925a6f940ec8cf552ed24cf8b1a&page=${page}&page_size=21`
+      );
       const parsedData = await res.json();
       if (page < 2) {
-        setData(parsedData.results);
+        console.log("FIRST FETCH");
+        setData(prevData => (prevData = parsedData.results));
       } else {
         console.log("SECOND FETCH");
-        setData([...data, parsedData.results]);
+        setData(prevData => {
+          return prevData.concat(parsedData.results);
+        });
       }
     } catch (err) {
       setError(err.message);
@@ -36,19 +39,18 @@ export default function Games() {
 
   useEffect(() => {
     fetchData();
-  }, [url, page]);
+  }, [page]);
 
-  console.log(page);
-
+  console.log(data);
   return (
     <section className='games-page'>
       <h1 className='page-heading '>EXPLORE GAMES</h1>
-      <button className='btn margin-bot' onClick={() => setPage(page + 1)}>
-        NEXT PAGE
-      </button>
       {loading && <div>Loading...</div>}
       {data && <GamesGrid games={data} />}
       {error && <div>Error..</div>}
+      <button className='btn margin-bot' onClick={() => setPage(p => p + 1)}>
+        NEXT PAGE
+      </button>
     </section>
   );
 }

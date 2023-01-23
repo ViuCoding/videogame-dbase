@@ -16,7 +16,7 @@ export default function GamesGrid({ games }) {
       {games.map(game => {
         return (
           <div key={game.id} className='game-card'>
-            <Link to={`/games/${game.id.toString()}`}>
+            <Link to={`/games/${game.id}`}>
               <div
                 className='game-card__bg'
                 style={{
@@ -40,7 +40,8 @@ export default function GamesGrid({ games }) {
                   </span>
                 </div>
                 <p className='game-released'>
-                  {new Date(game.released.toString()).toDateString()}
+                  {game.released &&
+                    new Date(game.released.toString()).toDateString()}
                 </p>
               </div>
             </Link>
