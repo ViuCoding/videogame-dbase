@@ -8,8 +8,10 @@ import GamesGrid from "../../components/GamesGrid";
 import LoadingSpinner from "../../components/LoadingSpinner";
 
 export default function Home() {
+  const RAWG_KEY = "71806925a6f940ec8cf552ed24cf8b1a";
+
   const { data, error, loading } = useFetch(
-    "https://api.rawg.io/api/games?key=71806925a6f940ec8cf552ed24cf8b1a&page_size=21&ordering=-released&metacritic=85,100"
+    `https://api.rawg.io/api/games?key=${RAWG_KEY}&page_size=21&ordering=-released&metacritic=85,100`
   );
 
   return (
