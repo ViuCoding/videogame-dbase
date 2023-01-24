@@ -2,7 +2,7 @@
 import "./Home.scss";
 
 import Hero from "../../components/Hero";
-import Background1 from "../../assets/img/bg1.jpg";
+import Background3 from "../../assets/img/bg3.jpg";
 import useFetch from "../../hooks/useFetch";
 import GamesGrid from "../../components/GamesGrid";
 import LoadingSpinner from "../../components/LoadingSpinner";
@@ -18,7 +18,11 @@ export default function Home() {
     <>
       <section className='home-page'>
         <div className='container'>
-          <Hero src={Background1} message='Join the Empire' />
+          <Hero
+            src={Background3}
+            message='Gamerz Shack'
+            text='A React videogames database'
+          />
 
           <article>
             <p className='paragraph'>

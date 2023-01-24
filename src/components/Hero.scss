@@ -1,3 +1,5 @@
+@import "../variables";
+
 // **
 // HERO
 // **
@@ -24,4 +26,14 @@
   align-items: end;
   padding-bottom: 1rem;
   padding-right: 1rem;
+
+  .overlay-text {
+    color: $accent;
+    
+    p {
+      color: $secondary;
+      font-size: 1rem;
+      font-weight: 200;
+    }
+  }
 }
