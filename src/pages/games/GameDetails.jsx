@@ -18,7 +18,6 @@ export default function GameDetails() {
       {loading && <LoadingSpinner />}
       {data && (
         <>
-          <h1 className='page-heading'>{data.name}</h1>
           <Hero src={data.background_image} message={data.name} />
           {/* <div className='game-metacritic'>
             <img src={Metacritic} alt='Metacritic logo' />
