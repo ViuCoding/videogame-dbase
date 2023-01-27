@@ -9,14 +9,13 @@
       border-bottom: 1px solid $accent;
 
       .date {
-        color: $secondary;
+        color: $accent;
       }
 
       .game-metacritic {
         display: flex;
         align-items: center;
         margin: 0.5rem 0;
-
 
         img {
           width: 24px;
@@ -35,6 +34,13 @@
         .icon {
           color: white;
           font-size: 24px;
+        }
+      }
+
+      .developers {
+        font-weight: 200;
+        .devs {
+          color: $accent;
         }
       }
     }

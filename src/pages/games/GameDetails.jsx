@@ -66,6 +66,17 @@ export default function GameDetails() {
                   </a>
                 </div>
               </div>
+
+              <div className='developers'>
+                <p className='devs'>Developed by</p>
+                {data.developers.map(dev => {
+                  return (
+                    <p key={dev.id}>
+                      <em>{dev.name}</em>{" "}
+                    </p>
+                  );
+                })}
+              </div>
             </div>
             <div className='game-description'>
               <h3 className='sub-heading margin-bot'>Description</h3>
