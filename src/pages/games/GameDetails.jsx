@@ -21,9 +21,9 @@ export default function GameDetails() {
 
   return (
     <div className='game-details'>
-      // Display LoadingSpinner if loading is true
+      {/* // Display LoadingSpinner if loading is true */}
       {loading && <LoadingSpinner />}
-      // Display Data if data has been succesfully fetched;
+      {/* // Display Data if data has been succesfully fetched; */}
       {data && (
         <>
           <Hero src={data.background_image} message={data.name} />

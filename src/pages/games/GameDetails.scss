@@ -55,7 +55,12 @@
         }
 
         span::after {
-          content: " ";
+          content: ", ";
+          color: $secondary;
+        }
+
+        span:last-child::after {
+          content: "";
         }
       }
     }
