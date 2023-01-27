@@ -43,6 +43,21 @@
           color: $accent;
         }
       }
+
+      .genres-list {
+        .genre {
+          color: $accent;
+        }
+      }
+      .tags-list {
+        .tags {
+          color: $accent;
+        }
+
+        span::after {
+          content: " ";
+        }
+      }
     }
 
     .game-description {

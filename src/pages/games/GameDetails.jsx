@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import useFetchGame from "../../hooks/useFetchGame";
 import Hero from "../../components/Hero";
@@ -52,22 +52,16 @@ export default function GameDetails() {
                 </span>
               </div>
 
-              <div className='urls'>
-                <div>
-                  <a href={data.website} target='_blank' className='icon'>
-                    {data.website && <FontAwesomeIcon icon={faGlobe} />}
-                  </a>
-                </div>
-                <div>
-                  <a href={data.reddit_url} target='_blank' className='icon'>
-                    {data.reddit_url && (
-                      <FontAwesomeIcon icon={faRedditAlien} />
-                    )}
-                  </a>
-                </div>
+              <div className='urls margin-bot'>
+                <a href={data.website} target='_blank' className='icon'>
+                  {data.website && <FontAwesomeIcon icon={faGlobe} />}
+                </a>
+                <a href={data.reddit_url} target='_blank' className='icon'>
+                  {data.reddit_url && <FontAwesomeIcon icon={faRedditAlien} />}
+                </a>
               </div>
 
-              <div className='developers'>
+              <div className='developers margin-bot'>
                 <p className='devs'>Developed by</p>
                 {data.developers.map(dev => {
                   return (
@@ -77,15 +71,37 @@ export default function GameDetails() {
                   );
                 })}
               </div>
+              <div className='genres-list margin-bot'>
+                <p className='genre'>Genre</p>
+                {data.genres.map(genre => {
+                  return (
+                    <p key={genre.id}>
+                      <span>{genre.name}</span>
+                    </p>
+                  );
+                })}
+              </div>
+              <div className='tags-list margin-bot'>
+                <p className='tags'>Relevant Tags</p>
+                {data.tags.map(tag => {
+                  return <span key={tag.id}>{tag.name}</span>;
+                })}
+              </div>
             </div>
             <div className='game-description'>
-              <h3 className='sub-heading margin-bot'>Description</h3>
+              <h2 className='sub-heading margin-bot'>Description</h2>
               {data.description_raw}
             </div>
           </div>
         </>
       )}
       {error && <GamesError />}
+
+      <div className='margin-bot btn-container'>
+        <button className='btn'>
+          <Link to='/games'>BACK TO GAMES</Link>
+        </button>
+      </div>
     </div>
   );
 }

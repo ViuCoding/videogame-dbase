@@ -105,15 +105,15 @@
   // GameDetails
 
   .game-details {
-
     .game-content {
       display: flex;
-      align-items: center;
       justify-content: space-between;
 
       .game-info {
-        padding: 0;
+        padding-top: 1rem;
+        padding-right: 2rem;
         border: 0;
+        width: 35%;
       }
 
       .game-description {
