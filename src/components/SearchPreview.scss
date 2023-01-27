@@ -16,7 +16,9 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid grey;
+  color: $white;
 
   .game-metacritic {
     width: 15px;

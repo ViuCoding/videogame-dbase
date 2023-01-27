@@ -84,7 +84,7 @@ export default function GameDetails() {
                 </div>
               )}
 
-              {data.genres && (
+              {data.genres.length > 0 && (
                 <div className='genres-list margin-bot'>
                   <p className='genre'>Genre</p>
                   {data.genres.map(genre => {
