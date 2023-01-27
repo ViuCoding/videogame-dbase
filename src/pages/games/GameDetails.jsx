@@ -54,7 +54,7 @@ export default function GameDetails() {
                       backgroundColor:
                         data.metacritic > 75
                           ? "green"
-                          : data.metacritic < 75 && data.metacritic > 50
+                          : data.metacritic <= 75 && data.metacritic >= 50
                           ? "goldenrod"
                           : "crimson",
                     }}>
