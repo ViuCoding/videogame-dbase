@@ -8,8 +8,9 @@ import GamesError from "./GamesError";
 import "./GameDetails.scss";
 import Metacritic from "../../assets/img/Metacritic.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { faRedditAlien } from "@fortawesome/free-brands-svg-icons";
+import GameStores from "../../components/GameStores";
 
 export default function GameDetails() {
   const { id } = useParams();
@@ -28,37 +29,40 @@ export default function GameDetails() {
         <>
           <Hero src={data.background_image} message={data.name} />
 
-          <div className='game-content margin-bot'>
+          <section className='game-content margin-bot'>
             <div className='game-info'>
               <h2 className='margin-bot'>{data.name}</h2>
               <p>
-                Released on{" "}
+                Release Date{" "}
                 <span className='date'>
-                  {data.released &&
-                    new Date(data.released.toString()).toDateString()}
+                  {data.released
+                    ? new Date(data.released.toString()).toDateString()
+                    : "TBD"}
                 </span>
               </p>
 
-              <div className='game-metacritic'>
-                <img src={Metacritic} alt='Metacritic logo' />
-                <span
-                  className='game-metacritic__vote'
-                  style={{
-                    backgroundColor:
-                      data.metacritic > 75
-                        ? "green"
-                        : data.metacritic < 75 && data.metacritic > 50
-                        ? "goldenrod"
-                        : "crimson",
-                  }}>
-                  {data.metacritic}
-                </span>
-              </div>
+              {data.metacritic && (
+                <div className='game-metacritic'>
+                  <img src={Metacritic} alt='Metacritic logo' />
+                  <span
+                    className='game-metacritic__vote'
+                    style={{
+                      backgroundColor:
+                        data.metacritic > 75
+                          ? "green"
+                          : data.metacritic < 75 && data.metacritic > 50
+                          ? "goldenrod"
+                          : "crimson",
+                    }}>
+                    {data.metacritic}
+                  </span>
+                </div>
+              )}
 
               {data.website && (
                 <div className='urls'>
                   <a href={data.website} target='_blank' className='icon'>
-                    {data.website && <FontAwesomeIcon icon={faGlobe} />}
+                    {data.website && <FontAwesomeIcon icon={faLink} />}
                   </a>
                   <a href={data.reddit_url} target='_blank' className='icon'>
                     {data.reddit_url && (
@@ -73,7 +77,7 @@ export default function GameDetails() {
 
               {data.developers && (
                 <div className='developers margin-bot'>
-                  <p className='devs'>Developed by</p>
+                  <p className='category'>Developer/s</p>
                   {data.developers.map(dev => {
                     return (
                       <p key={dev.id}>
@@ -84,9 +88,22 @@ export default function GameDetails() {
                 </div>
               )}
 
+              {data.publishers && (
+                <div className='publishers margin-bot'>
+                  <p className='category'>Publisher/s</p>
+                  {data.publishers.map(pub => {
+                    return (
+                      <p key={pub.id}>
+                        <em>{pub.name}</em>{" "}
+                      </p>
+                    );
+                  })}
+                </div>
+              )}
+
               {data.genres.length > 0 && (
                 <div className='genres-list margin-bot'>
-                  <p className='genre'>Genre</p>
+                  <p className='category'>Genre/s</p>
                   {data.genres.map(genre => {
                     return (
                       <p key={genre.id}>
@@ -99,7 +116,7 @@ export default function GameDetails() {
 
               {data.tags.length > 0 && (
                 <div className='tags-list margin-bot'>
-                  <p className='tags'>Relevant Tags</p>
+                  <p className='category'>Relevant Tags</p>
                   {data.tags.map(tag => {
                     return <span key={tag.id}>{tag.name}</span>;
                   })}
@@ -111,10 +128,15 @@ export default function GameDetails() {
               <h2 className='sub-heading margin-bot'>Description</h2>
               {data.description_raw}
             </div>
-          </div>
+          </section>
         </>
       )}
       {error && <GamesError />}
+
+      <section className='stores margin-bot'>
+        <GameStores id={id} />
+      </section>
+
       <div className='margin-bot btn-container'>
         <button className='btn'>
           <Link to='/games'>BACK TO GAMES</Link>

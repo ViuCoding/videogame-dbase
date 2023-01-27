@@ -37,36 +37,28 @@
         }
       }
 
-      .developers {
-        font-weight: 200;
-        .devs {
-          color: $accent;
-        }
+      .category {
+        color: $accent;
       }
 
-      .genres-list {
-        .genre {
-          color: $accent;
-        }
+      span::after {
+        content: " | ";
+        color: $accent;
       }
-      .tags-list {
-        .tags {
-          color: $accent;
-        }
 
-        span::after {
-          content: " | ";
-          color: $accent;
-        }
-
-        span:last-child::after {
-          content: "";
-        }
+      span:last-child::after {
+        content: "";
       }
     }
+  }
 
-    .game-description {
-      padding: 1rem 0;
-    }
+  .game-description {
+    padding: 1rem 0;
+  }
+
+  .stores {
+    background-color: $primary-dark;
+    text-align: center;
+    padding: 1rem 0;
   }
 }

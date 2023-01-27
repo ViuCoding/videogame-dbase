@@ -29,8 +29,6 @@ export default function useFetch(URL) {
     if (URL.slice(-1) !== "=") {
       fetchData();
     }
-    // else {
-    // }
 
     return () => {
       setData(null);

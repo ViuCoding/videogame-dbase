@@ -1,0 +1,13 @@
+@import "../variables";
+
+.game-stores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  .url a {
+    font-size: 2rem;
+    font-weight: 100;
+    color: $white;
+  }
+}
