@@ -1,0 +1,67 @@
+@import "../../variables";
+
+.game-details {
+  font-weight: 200;
+
+  .game-content {
+    .game-info {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $accent;
+
+      .date {
+        color: $accent;
+      }
+
+      .game-metacritic {
+        display: flex;
+        align-items: center;
+        margin: 0.5rem 0;
+
+        img {
+          width: 24px;
+        }
+
+        .game-metacritic__vote {
+          border-radius: 4px;
+          padding: 1px 4px;
+          font-size: 0.8rem;
+          display: inline-block;
+          margin-left: 0.5rem;
+        }
+      }
+
+      .urls {
+        .icon {
+          color: white;
+          font-size: 24px;
+        }
+      }
+
+      .developers {
+        font-weight: 200;
+        .devs {
+          color: $accent;
+        }
+      }
+
+      .genres-list {
+        .genre {
+          color: $accent;
+        }
+      }
+      .tags-list {
+        .tags {
+          color: $accent;
+        }
+
+        span::after {
+          content: " ";
+        }
+      }
+    }
+
+    .game-description {
+      padding: 1rem 0;
+    }
+  }
+}

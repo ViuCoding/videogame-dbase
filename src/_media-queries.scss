@@ -100,6 +100,30 @@
     width: 32%;
   }
 
+  // GameDetails
+  // GameDetails
+  // GameDetails
+
+  .game-details {
+    .game-content {
+      display: flex;
+      justify-content: space-between;
+
+      .game-info {
+        padding-top: 1rem;
+        padding-right: 2rem;
+        border: 0;
+        width: 35%;
+      }
+
+      .game-description {
+        border-left: 1px solid $accent;
+        width: 65%;
+        padding-left: 2rem;
+      }
+    }
+  }
+
   // Footer
   // Footer
   // Footer
