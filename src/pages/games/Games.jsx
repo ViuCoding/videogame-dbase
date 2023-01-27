@@ -27,10 +27,8 @@ export default function Games() {
       );
       const parsedData = await res.json();
       if (page < 2) {
-        console.log("FIRST FETCH");
         setData(prevData => (prevData = parsedData.results));
       } else {
-        console.log("NEXT FETCH");
         setData(prevData => {
           return prevData.concat(parsedData.results);
         });

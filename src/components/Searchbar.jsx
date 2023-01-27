@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import { useState } from "react";
 import useFetch from "../hooks/useFetch";
 
@@ -15,7 +14,6 @@ export default function Searchbar() {
   const [isVisible, setIsVisible] = useState(false);
   const { data, error, loading } = useFetch(url);
 
-  const searchBox = useRef(null);
 
   function handleChange(e) {
     if (e.target.value.trim() === "") {
@@ -40,7 +38,6 @@ export default function Searchbar() {
   }
 
   function onBlur() {
-    console.log("not on focus");
     setQuery("");
     setTimeout(() => {
       setIsVisible(!isVisible);
