@@ -4,6 +4,7 @@ import useFetchGame from "../../hooks/useFetchGame";
 
 import Metacritic from "../../assets/img/Metacritic.svg";
 import Hero from "../../components/Hero";
+import GamesError from "./GamesError";
 
 export default function GameDetails() {
   const { id } = useParams();
@@ -37,7 +38,7 @@ export default function GameDetails() {
           <div className='game-description'>{data.description_raw}</div>
         </>
       )}
-      {error && <div>Error...</div>}
+      {error && <GamesError />}
     </div>
   );
 }

@@ -12,10 +12,14 @@ export default function useFetchGame(URL) {
     try {
       setLoading(true);
       const res = await fetch(URL);
-      const parsedData = await res.json();
-      setData(prevData => (prevData = parsedData));
+      if (res.ok) {
+        const parsedData = await res.json();
+        setData(prevData => (prevData = parsedData));
+      } else {
+        throw new Error("Unable to find the game requested.");
+      }
     } catch (err) {
-      setError(err.message);
+      setError(err);
     } finally {
       setLoading(false);
     }

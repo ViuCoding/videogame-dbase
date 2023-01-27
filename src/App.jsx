@@ -18,6 +18,7 @@ import Support from "./pages/help/Support";
 import NotFound from "./pages/NotFound";
 import GameDetails from "./pages/games/GameDetails";
 import Games from "./pages/games/Games";
+import GamesError from "./pages/games/GamesError";
 
 // Router
 const router = createBrowserRouter(
@@ -32,7 +33,10 @@ const router = createBrowserRouter(
         <Route path='support' element={<Support />} />
       </Route>
 
-      <Route path='games' element={<GamesLayout />}>
+      <Route
+        path='games'
+        errorElement={<GamesError />}
+        element={<GamesLayout />}>
         <Route index element={<Games />} />
         <Route path=':id' element={<GameDetails />} />
       </Route>
