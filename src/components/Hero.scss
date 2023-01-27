@@ -6,7 +6,7 @@
 
 .hero,
 .error-img__container {
-  min-height: fit-content;
+  height: fit-content;
   margin-bottom: 1rem;
   position: relative;
 }
@@ -29,7 +29,7 @@
 
   .overlay-text {
     color: $accent;
-    
+
     p {
       color: $secondary;
       font-size: 1rem;

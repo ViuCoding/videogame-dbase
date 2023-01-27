@@ -1,0 +1,13 @@
+@import "../../variables";
+
+.home-page {
+  article p {
+    font-size: 1.2rem;
+    font-weight: 200;
+  }
+
+  article p span {
+    color: $secondary;
+    font-weight: 600;
+  }
+}

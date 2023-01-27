@@ -30,6 +30,7 @@ export default function GameDetails() {
 
           <div className='game-content margin-bot'>
             <div className='game-info'>
+              <h2 className='margin-bot'>{data.name}</h2>
               <p>
                 Released on{" "}
                 <span className='date'>
