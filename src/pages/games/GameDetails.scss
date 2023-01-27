@@ -55,8 +55,8 @@
         }
 
         span::after {
-          content: ", ";
-          color: $secondary;
+          content: " | ";
+          color: $accent;
         }
 
         span:last-child::after {

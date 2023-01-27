@@ -62,7 +62,10 @@ export default function GameDetails() {
                   </a>
                   <a href={data.reddit_url} target='_blank' className='icon'>
                     {data.reddit_url && (
-                      <FontAwesomeIcon icon={faRedditAlien} />
+                      <FontAwesomeIcon
+                        icon={faRedditAlien}
+                        style={{ color: "#ff4500" }}
+                      />
                     )}
                   </a>
                 </div>
