@@ -25,9 +25,13 @@ export default function GameDetails() {
       {/* // Display LoadingSpinner if loading is true */}
       {loading && <LoadingSpinner />}
       {/* // Display Data if data has been succesfully fetched; */}
+
       {data && (
         <>
           <Hero src={data.background_image} message={data.name} />
+          <section className='stores margin-bot'>
+            <GameStores id={id} />
+          </section>
 
           <section className='game-content margin-bot'>
             <div className='game-info'>
@@ -132,10 +136,6 @@ export default function GameDetails() {
         </>
       )}
       {error && <GamesError />}
-
-      <section className='stores margin-bot'>
-        <GameStores id={id} />
-      </section>
 
       <div className='margin-bot btn-container'>
         <button className='btn'>
