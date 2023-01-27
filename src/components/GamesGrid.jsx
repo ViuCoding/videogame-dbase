@@ -33,7 +33,7 @@ export default function GamesGrid({ games }) {
                         game.metacritic > 75
                           ? "green"
                           : game.metacritic < 75 && game.metacritic > 50
-                          ? "yellow"
+                          ? "goldenrod"
                           : "crimson",
                     }}>
                     {game.metacritic}

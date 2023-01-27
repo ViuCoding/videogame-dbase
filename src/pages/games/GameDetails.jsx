@@ -47,7 +47,7 @@ export default function GameDetails() {
                       data.metacritic > 75
                         ? "green"
                         : data.metacritic < 75 && data.metacritic > 50
-                        ? "yellow"
+                        ? "goldenrod"
                         : "crimson",
                   }}>
                   {data.metacritic}
