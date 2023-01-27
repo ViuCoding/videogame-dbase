@@ -22,11 +22,10 @@ export default function GameStores({ id }) {
   let url = `https://api.rawg.io/api/games/${id}/stores?key=${RAWG_KEY}`;
 
   const { data, error, loading } = useFetch(url);
-  console.log(data);
 
   return (
     <>
-      <h2 className='sub-heading'>Available Here</h2>
+      <h2 className='sub-heading'>BUY HERE</h2>
       <div className='game-stores '>
         {loading && <LoadingSpinner />}
         {data &&
@@ -83,7 +82,11 @@ export default function GameStores({ id }) {
               return (
                 <div className='url' key={store.id}>
                   <a href={store.url} target='_blank'>
-                    <FontAwesomeIcon icon={faXbox} style={{ color: "lime" }} />
+                    <FontAwesomeIcon
+                      icon={faXbox}
+                      style={{ color: "#119910" }}
+                    />
+                    <span>360</span>
                   </a>
                 </div>
               );
