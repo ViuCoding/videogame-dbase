@@ -27,6 +27,10 @@ export default function useFetchGame(URL) {
 
   useEffect(() => {
     fetchData();
+
+    return () => {
+      setData(null);
+    };
   }, [URL]);
 
   return { data, error, loading };

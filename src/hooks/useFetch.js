@@ -28,9 +28,13 @@ export default function useFetch(URL) {
   useEffect(() => {
     if (URL.slice(-1) !== "=") {
       fetchData();
-    } else {
-      setData(null);
     }
+    // else {
+    // }
+
+    return () => {
+      setData(null);
+    };
   }, [URL]);
 
   return { data, error, loading };

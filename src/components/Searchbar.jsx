@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useState } from "react";
 import useFetch from "../hooks/useFetch";
 
@@ -10,15 +11,20 @@ import SearchPreview from "./SearchPreview";
 export default function Searchbar() {
   const RAWG_KEY = "71806925a6f940ec8cf552ed24cf8b1a";
   const [url, setUrl] = useState("");
+  const [query, setQuery] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const { data, error, loading } = useFetch(url);
 
+  const searchBox = useRef(null);
+
   function handleChange(e) {
     if (e.target.value.trim() === "") {
+      setQuery("");
       setUrl("");
       setIsVisible(false);
     } else {
       setIsVisible(true);
+      setQuery(e.target.value);
       setTimeout(() => {
         setUrl(
           `https://api.rawg.io/api/games?key=${RAWG_KEY}&search=${e.target.value.trim()}`
@@ -30,6 +36,15 @@ export default function Searchbar() {
   // Passing this function to the child component, when we click on any link the SearchPreview will be toggled off.
   function handleClick() {
     setIsVisible(!isVisible);
+    setQuery("");
+  }
+
+  function onBlur() {
+    console.log("not on focus");
+    setQuery("");
+    setTimeout(() => {
+      setIsVisible(!isVisible);
+    }, 200);
   }
 
   return (
@@ -40,6 +55,8 @@ export default function Searchbar() {
           name='game-query'
           id='game-query'
           onChange={handleChange}
+          value={query}
+          onBlur={onBlur}
           placeholder='Search games'
         />
       </form>
