@@ -25,7 +25,7 @@ export default function GameStores({ id }) {
 
   return (
     <>
-      <h2 className='sub-heading'>BUY HERE</h2>
+      <h2 className='sub-heading'>AVAILABLE STORES</h2>
       <div className='game-stores '>
         {loading && <LoadingSpinner />}
         {data &&
