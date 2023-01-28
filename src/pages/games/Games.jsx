@@ -17,13 +17,16 @@ export default function Games() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [currentDate, setCurrentDate] = useState(
+    new Date().toISOString().split("T")[0]
+  );
 
   // functions
   async function fetchData() {
     try {
       setLoading(true);
       const res = await fetch(
-        `https://api.rawg.io/api/games?key=71806925a6f940ec8cf552ed24cf8b1a&page=${page}&page_size=21`
+        `https://api.rawg.io/api/games?key=71806925a6f940ec8cf552ed24cf8b1a&page=${page}&page_size=21&ordering=-released&exclude_additions=true&ordering=-rating&dates=2022-11-01,${currentDate}`
       );
       const parsedData = await res.json();
       if (page < 2) {
@@ -39,10 +42,10 @@ export default function Games() {
       setLoading(false);
     }
   }
-
   useEffect(() => {
     fetchData();
   }, [page]);
+
 
   return (
     <section className='games-page'>

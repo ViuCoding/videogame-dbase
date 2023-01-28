@@ -1,10 +1,4 @@
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSteam,
-  faPlaystation,
-  faXbox,
-} from "@fortawesome/free-brands-svg-icons";
 
 // styles
 import "./GamesGrid.scss";
@@ -32,7 +26,7 @@ export default function GamesGrid({ games }) {
                       backgroundColor:
                         game.metacritic > 75
                           ? "green"
-                          : game.metacritic < 75 && game.metacritic > 50
+                          : game.metacritic <= 75 && game.metacritic >= 50
                           ? "goldenrod"
                           : "crimson",
                     }}>
