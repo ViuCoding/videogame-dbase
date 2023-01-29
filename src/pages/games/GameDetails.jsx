@@ -130,7 +130,7 @@ export default function GameDetails() {
 
             <div className='game-description'>
               <h2 className='sub-heading margin-bot'>Description</h2>
-              {data.description_raw}
+              {<p dangerouslySetInnerHTML={{__html: data.description}}></p>}
             </div>
           </section>
         </>
