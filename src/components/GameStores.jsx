@@ -24,8 +24,9 @@ export default function GameStores({ id }) {
   const { data, error, loading } = useFetch(url);
 
   return (
-    <>
+    <section className='stores margin-bot'>
       <h2 className='sub-heading'>AVAILABLE STORES</h2>
+
       <div className='game-stores '>
         {loading && <LoadingSpinner />}
         {data &&
@@ -117,6 +118,6 @@ export default function GameStores({ id }) {
             }
           })}
       </div>
-    </>
+    </section>
   );
 }

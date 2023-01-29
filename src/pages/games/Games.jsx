@@ -46,7 +46,6 @@ export default function Games() {
     fetchData();
   }, [page]);
 
-
   return (
     <section className='games-page'>
       <h1 className='page-heading '>EXPLORE GAMES</h1>
@@ -55,7 +54,7 @@ export default function Games() {
       {error && <div>Error..</div>}
       <div className='next-page'>
         <button onClick={() => setPage(p => p + 1)} className='btn margin-bot'>
-          NEXT PAGE
+          MORE GAMES
         </button>
       </div>
     </section>

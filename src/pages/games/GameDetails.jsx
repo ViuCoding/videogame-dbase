@@ -29,9 +29,8 @@ export default function GameDetails() {
       {data && (
         <>
           <Hero src={data.background_image} message={data.name} />
-          <section className='stores margin-bot'>
-            <GameStores id={id} />
-          </section>
+
+          <GameStores id={id} />
 
           <section className='game-content margin-bot'>
             <div className='game-info'>
@@ -79,7 +78,7 @@ export default function GameDetails() {
                 </div>
               )}
 
-              {data.developers && (
+              {data.developers.length > 0 && (
                 <div className='developers margin-bot'>
                   <p className='category'>Developer/s</p>
                   {data.developers.map(dev => {
@@ -92,7 +91,7 @@ export default function GameDetails() {
                 </div>
               )}
 
-              {data.publishers && (
+              {data.publishers.length > 0 && (
                 <div className='publishers margin-bot'>
                   <p className='category'>Publisher/s</p>
                   {data.publishers.map(pub => {
@@ -130,7 +129,7 @@ export default function GameDetails() {
 
             <div className='game-description'>
               <h2 className='sub-heading margin-bot'>Description</h2>
-              {<p dangerouslySetInnerHTML={{__html: data.description}}></p>}
+              {<p dangerouslySetInnerHTML={{ __html: data.description }}></p>}
             </div>
           </section>
         </>
