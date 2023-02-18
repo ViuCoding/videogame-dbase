@@ -34,7 +34,7 @@ export default function Navbar() {
               Games
             </NavLink>
             <NavLink to='signup' className='nav-link' onClick={toggleActive}>
-              Signup
+              Sign up
             </NavLink>
             <NavLink to='login' className='nav-link' onClick={toggleActive}>
               Login
