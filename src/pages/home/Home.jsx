@@ -7,7 +7,6 @@ import useFetch from "../../hooks/useFetch";
 import GamesGrid from "../../components/GamesGrid";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import { Link } from "react-router-dom";
-import { useAuthContext } from "../../hooks/useAuthContext";
 
 export default function Home() {
   const RAWG_KEY = "71806925a6f940ec8cf552ed24cf8b1a";

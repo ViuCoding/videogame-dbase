@@ -3,9 +3,19 @@ import { createContext } from "react";
 
 export const AuthContext = createContext();
 
-const authReducer = (state, action) => {};
+const authReducer = (state, action) => {
+  switch (action.type) {
+    case "LOGIN":
+      return { ...state, user: action.payload };
+    case "LOGOUT":
+      return { ...state, user: null };
 
-export default function AuthProvider({ children }) {
+    default:
+      return state;
+  }
+};
+
+export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, {
     user: null,
     authIsReady: false,
@@ -16,4 +26,4 @@ export default function AuthProvider({ children }) {
       {children}
     </AuthContext.Provider>
   );
-}
+};
