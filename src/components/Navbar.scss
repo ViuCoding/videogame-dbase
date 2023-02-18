@@ -22,7 +22,20 @@
   display: none;
   font-size: 2rem;
   color: $secondary;
-  border-bottom: 2px solid $white;
+  border-bottom: 2px solid transparent;
+  animation: blink 2s infinite ease;
+}
+
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: $accent;
+  }
+  100% {
+    border-color: transparent;
+  }
 }
 
 nav a:hover {
