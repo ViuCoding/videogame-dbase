@@ -8,6 +8,7 @@ const authReducer = (state, action) => {};
 export default function AuthProvider({ children }) {
   const [state, dispatch] = useReducer(authReducer, {
     user: null,
+    authIsReady: false,
   });
 
   return (
