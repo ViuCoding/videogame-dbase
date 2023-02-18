@@ -9,11 +9,11 @@ export const useSignup = () => {
   const [error, setError] = useState(null);
   const { dispatch } = useAuthContext();
 
-  const signUp = (email, password) => {
+  const signUp = (email, password, displayName) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then(userCred => {
         alert("USER SIGNED UP");
-        dispatch({ type: "LOGIN", payload: userCreds.user });
+        dispatch({ type: "LOGIN", payload: userCred.user });
         console.log(userCred);
       })
       .catch(err => setError(err.message));

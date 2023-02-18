@@ -20,6 +20,7 @@ export default function GamesGrid({ games }) {
                 <h3 className='game-title'>{game.name}</h3>
                 <div className='game-metacritic'>
                   <img src={Metacritic} alt='Metacritic logo' />
+                  <span> Metacritic Score</span>
                   <span
                     className='game-metacritic__vote'
                     style={{
