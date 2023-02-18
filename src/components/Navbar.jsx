@@ -33,6 +33,12 @@ export default function Navbar() {
             <NavLink to='games' className='nav-link' onClick={toggleActive}>
               Games
             </NavLink>
+            <NavLink to='signup' className='nav-link' onClick={toggleActive}>
+              Signup
+            </NavLink>
+            <NavLink to='login' className='nav-link' onClick={toggleActive}>
+              Login
+            </NavLink>
             {/* <NavLink to='about' className='nav-link' onClick={toggleActive}>
               About
             </NavLink>

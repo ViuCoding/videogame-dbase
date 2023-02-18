@@ -19,6 +19,8 @@ import NotFound from "./pages/NotFound";
 import GameDetails from "./pages/games/GameDetails";
 import Games from "./pages/games/Games";
 import GamesError from "./pages/games/GamesError";
+import Signup from "./pages/signup/Signup";
+import Login from "./pages/login/Login";
 
 // Router
 const router = createBrowserRouter(
@@ -27,6 +29,8 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
 
       <Route path='about' element={<About />} />
+      <Route path='signup' element={<Signup />} />
+      <Route path='login' element={<Login />} />
 
       <Route path='help' element={<HelpLayout />}>
         <Route path='faq' element={<Faq />} />
