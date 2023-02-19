@@ -1,1 +1,26 @@
 @import "../../variables";
+
+.login-form {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem 0;
+
+  label {
+    font-weight: 200;
+  }
+
+  input {
+    background-color: $primary-dark;
+    color: $accent;
+    width: 100%;
+
+    &:focus {
+      background-color: $primary-dark;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $accent;
+      border-radius: 3px;
+    }
+  }
+}

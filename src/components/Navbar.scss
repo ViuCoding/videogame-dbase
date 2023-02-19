@@ -21,20 +21,23 @@
 .nav-logo {
   display: none;
   font-size: 2rem;
-  color: $secondary;
+  color: $white;
   border-bottom: 2px solid transparent;
-  animation: blink 2s infinite ease;
+}
+
+.blink-anim {
+  animation: blink 4s infinite ease;
 }
 
 @keyframes blink {
   0% {
-    border-color: transparent;
+    color: transparent;
   }
   50% {
-    border-color: $accent;
+    color: $accent;
   }
   100% {
-    border-color: transparent;
+    color: transparent;
   }
 }
 

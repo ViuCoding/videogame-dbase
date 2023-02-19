@@ -21,9 +21,9 @@ export default function Login() {
   return (
     <div className='login-page'>
       <div className='container'>
-        <h1>LOGIN</h1>
-
         <form className='login-form' onSubmit={handleSubmit}>
+          <h1>Welcome back..</h1>
+          <h2 className='sub-heading margin-bot'>Log in to your account!</h2>
           <label htmlFor='email'>
             Email
             <input

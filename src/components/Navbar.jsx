@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 // styles
 import "./Navbar.scss";
 import Searchbar from "./Searchbar";
-import AltLogo from "../assets/img/arcade-game.svg";
+import AltLogo from "../assets/img/joypad.svg";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useLogout } from "../hooks/useLogout";
 
@@ -23,7 +23,9 @@ export default function Navbar() {
       <div className='container'>
         <nav className='navbar'>
           <Link to='/'>
-            <h2 className='nav-logo'>GamerzShack</h2>
+            <h2 className='nav-logo'>
+              Gamerz<span className='blink-anim color-accent'>Shack</span>
+            </h2>
             <div className='nav-logo__alt'>
               <img src={AltLogo} alt='' />
             </div>

@@ -61,6 +61,7 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px $primary-dark inset !important;
+  -webkit-text-fill-color: $accent;
 }
 
 .page-heading {
@@ -118,6 +119,13 @@ input:-webkit-autofill:active {
   &:active {
     transform: scale(0.96);
   }
+}
+
+.color-secondary {
+  color: $secondary;
+}
+.color-accent {
+  color: $accent;
 }
 
 .pos-relative {

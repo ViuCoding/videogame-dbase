@@ -22,9 +22,11 @@ export default function Signup() {
   return (
     <div className='signup-page'>
       <div className='container'>
-        <h1>SIGNUP</h1>
-
         <form onSubmit={handleSubmit} className='signup-form'>
+          <h1>
+            Welcome to Gamerz<span className='color-accent'>Shack</span>
+          </h1>
+          <h2 className='sub-heading margin-bot'>Let's create your account!</h2>
           <label htmlFor='email'>
             Email
             <input
@@ -57,9 +59,6 @@ export default function Signup() {
             />
           </label>
 
-          <p>
-            {email} {password} {displayName}
-          </p>
           <button className='btn'>SIGN UP</button>
         </form>
 
