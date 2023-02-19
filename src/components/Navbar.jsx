@@ -5,9 +5,14 @@ import { Link, NavLink } from "react-router-dom";
 import "./Navbar.scss";
 import Searchbar from "./Searchbar";
 import AltLogo from "../assets/img/arcade-game.svg";
+import { useAuthContext } from "../hooks/useAuthContext";
+import { useLogout } from "../hooks/useLogout";
 
 export default function Navbar() {
   const [isActive, setActive] = useState(false);
+
+  const { user } = useAuthContext();
+  const { logout } = useLogout();
 
   const toggleActive = () => {
     setActive(!isActive);
@@ -33,12 +38,12 @@ export default function Navbar() {
             <NavLink to='games' className='nav-link' onClick={toggleActive}>
               Games
             </NavLink>
-            {/* <NavLink to='signup' className='nav-link' onClick={toggleActive}>
-              Sign up
+            <NavLink to='signup' className='nav-link' onClick={toggleActive}>
+              <span>Sign up</span>
             </NavLink>
             <NavLink to='login' className='nav-link' onClick={toggleActive}>
-              Login
-            </NavLink> */}
+              {user ? <span onClick={logout}>Logout</span> : <span>Login</span>}
+            </NavLink>
             {/* <NavLink to='about' className='nav-link' onClick={toggleActive}>
               About
             </NavLink>
@@ -48,8 +53,6 @@ export default function Navbar() {
 
             <div className='nav-branding'>
               <h2 className='nav-branding__logo margin-bot'>GamerzShack</h2>
-
-              {/* <button className='btn'>SIGN UP</button> */}
             </div>
           </div>
 
