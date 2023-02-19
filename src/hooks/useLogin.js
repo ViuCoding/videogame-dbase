@@ -21,5 +21,5 @@ export const useLogin = () => {
       });
   };
 
-  return { error, login };
+  return { login, error };
 };

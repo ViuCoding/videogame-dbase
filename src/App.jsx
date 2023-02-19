@@ -4,6 +4,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import { useAuthContext } from "./hooks/useAuthContext";
 
 // Layouts
 import RootLayout from "./layouts/RootLayout";
@@ -51,7 +52,8 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+  const { authIsReady } = useAuthContext();
+  return <div>{authIsReady && <RouterProvider router={router} />}</div>;
 }
 
 export default App;
