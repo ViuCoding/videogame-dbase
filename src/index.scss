@@ -44,6 +44,25 @@ body {
   background: $primary;
 }
 
+label,
+input,
+textarea {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+input {
+  border: none;
+  padding: 0.7rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $primary-dark inset !important;
+}
+
 .page-heading {
   color: $accent;
   font-size: 2rem;
