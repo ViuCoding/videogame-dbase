@@ -41,9 +41,16 @@ export default function Navbar() {
             <NavLink to='signup' className='nav-link' onClick={toggleActive}>
               <span>Sign up</span>
             </NavLink>
-            <NavLink to='login' className='nav-link' onClick={toggleActive}>
-              {user ? <span onClick={logout}>Logout</span> : <span>Login</span>}
-            </NavLink>
+            {user ? (
+              <NavLink to='/' className='nav-link' onClick={toggleActive}>
+                <span onClick={logout}>Logout</span>
+              </NavLink>
+            ) : (
+              <NavLink to='login' className='nav-link' onClick={toggleActive}>
+                Login
+              </NavLink>
+            )}
+
             {/* <NavLink to='about' className='nav-link' onClick={toggleActive}>
               About
             </NavLink>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSignup } from "../../hooks/useSignup";
 
 // styles
@@ -12,11 +13,13 @@ export default function Signup() {
 
   // imports
   const { signup, error } = useSignup();
+  const navigate = useNavigate();
 
   // functions
   const handleSubmit = e => {
     e.preventDefault();
     signup(email, password, displayName);
+    navigate("/");
   };
 
   return (
