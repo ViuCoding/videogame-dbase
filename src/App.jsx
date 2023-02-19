@@ -53,7 +53,7 @@ const router = createBrowserRouter(
 
 function App() {
   const { authIsReady } = useAuthContext();
-  return <div>{authIsReady && <RouterProvider router={router} />}</div>;
+  return <>{authIsReady && <RouterProvider router={router} />}</>;
 }
 
 export default App;
