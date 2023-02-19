@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useLogin } from "../../hooks/useLogin";
 
 // styles
@@ -12,13 +11,11 @@ export default function Login() {
 
   //imports
   const { login, error } = useLogin();
-  const navigate = useNavigate();
 
   //functions
   const handleSubmit = e => {
     e.preventDefault();
     login(email, password);
-    navigate("/");
   };
 
   return (
@@ -34,6 +31,7 @@ export default function Login() {
               name='email'
               id='email'
               onChange={e => setEmail(e.target.value)}
+              required
             />
           </label>
 
@@ -44,6 +42,7 @@ export default function Login() {
               name='password'
               id='password'
               onChange={e => setPassword(e.target.value)}
+              required
             />
           </label>
           <button className='btn'>LOG IN</button>

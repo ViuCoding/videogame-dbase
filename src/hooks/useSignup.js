@@ -4,10 +4,13 @@ import { useState } from "react";
 import { auth } from "../firebase/config";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useAuthContext } from "./useAuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const useSignup = () => {
   const [error, setError] = useState(null);
   const { dispatch } = useAuthContext();
+
+  const navigate = useNavigate();
 
   const signup = (email, password, displayName) => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -27,6 +30,8 @@ export const useSignup = () => {
           .catch(err => {
             console.log(err.message);
           });
+
+        navigate("/");
       })
       .catch(err => setError(err.message));
   };
