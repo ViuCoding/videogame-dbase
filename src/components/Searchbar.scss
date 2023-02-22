@@ -19,4 +19,12 @@
   background-color: $primary;
   border-radius: 30px;
   width: 90%;
+
+  &:focus {
+    background-color: $primary-dark;
+  }
+
+  &:focus-visible {
+    outline: 0px solid $accent;
+  }
 }
